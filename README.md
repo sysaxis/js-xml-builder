@@ -12,7 +12,7 @@ So here's another attempt at an XML builder...
 ## How easy this is
 Write this
 ```js
-const XMLObject = require('xml-builder');
+const XMLObject = require('dynamic-xml-builder');
 
 var xml = new XMLObject('html');
 
