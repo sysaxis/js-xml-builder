@@ -1,5 +1,5 @@
 {
-  "name": "xmlc",
+  "name": "xml-builder",
   "version": "0.1.0",
   "description": "dynamic XML builder",
   "main": "app.js",
