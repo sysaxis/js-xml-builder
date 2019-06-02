@@ -1,4 +1,4 @@
-xml-builder
+dynamic-xml-builder
 ====
 
 Build XML dynamically.
