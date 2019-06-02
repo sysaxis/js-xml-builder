@@ -1,7 +1,14 @@
 {
   "name": "dynamic-xml-builder",
-  "version": "0.1.0",
+  "bugs": {
+    "url": "https://github.com/sysaxis/js-xml-builder/issues"
+  },
+  "version": "0.1.1",
   "description": "dynamic XML builder",
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/sysaxis/js-xml-builder.git"
+  },
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
