@@ -1,0 +1,52 @@
+{
+	"html": {
+		"_lang": "en",
+		"head": {
+			"meta": {
+				"_charset": "utf-8"
+			},
+			"title": "example",
+			"style": "myclass { background-color: #e5e5e5 }"
+		},
+		"body": {
+			"div": {
+				"table": {
+					"_style": "color: red; border: 1px solid black;",
+					"tr": [
+						{
+							"th": [
+								"Id",
+								"Name"
+							]
+						},
+						{
+							"th": [
+								"119",
+								"Jager"
+							]
+						},
+						{
+							"th": [
+								"130",
+								"Tachanka"
+							]
+						}
+					]
+				},
+				"div": {
+					"_class": "myclass",
+					"p": [
+						"Are you ready?",
+						[
+							"I am ",
+							{
+								"em": "very much"
+							},
+							" ready to go!"
+						]
+					]
+				}
+			}
+		}
+	}
+}

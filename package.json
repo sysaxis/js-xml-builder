@@ -1,0 +1,22 @@
+{
+  "name": "xmlc",
+  "version": "0.1.0",
+  "description": "dynamic XML builder",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "xml",
+    "dynamic",
+    "builder",
+    "constructor",
+    "converter"
+  ],
+  "author": "sysaxis",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}

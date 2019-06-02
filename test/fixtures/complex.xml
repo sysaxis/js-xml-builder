@@ -1,0 +1,29 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>example</title>
+		<style>myclass { background-color: #e5e5e5 }</style>
+	</head>
+	<body>
+		<div>
+			<table style="color: red; border: 1px solid black;">
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+				</tr>
+				<tr>
+					<th>119</th>
+					<th>Jager</th>
+				</tr>
+				<tr>
+					<th>130</th>
+					<th>Tachanka</th>
+				</tr>
+			</table>
+			<div class="myclass">
+				<p>Are you ready?</p>
+				<p>I am <em>very much</em> ready to go!</p>
+			</div>
+		</div>
+	</body>
+</html>
