@@ -102,7 +102,7 @@ test('self closing tags', function() {
     xmlo = new XMLObject('test', {a: {}, b: {}});
 
     assert.equal('<test>\r\n\t<a/>\r\n\t<b/>\r\n</test>', xmlo.toXML());
-    assert.deepEqual({test: {a: {}, b: {}}}, xmlo.toObject())
+    assert.deepEqual({test: {a: {}, b: {}}}, xmlo.toObject());
 });
 
 
@@ -155,6 +155,26 @@ test('array assignment', function() {
     xmlo.a = ['b', 'c', {d: 'ef'}];
 
     assert.equal('<test><a>b</a><a>c</a><a><d>ef</d></a></test>', xmlo.toXML({indent: '', newLine: ''}));
+});
+
+test('null value assignment', function() {
+
+    xmlo = new XMLObject('test');
+
+    xmlo.a = null;
+
+    assert.equal('<test><a/></test>', xmlo.toXML({indent: '', newLine: ''}));
+    assert.deepEqual({test: {a: null}}, xmlo.toObject());
+});
+
+test('zero value assignment', function() {
+
+    xmlo = new XMLObject('test');
+
+    xmlo.a = 0;
+
+    assert.equal('<test><a>0</a></test>', xmlo.toXML({indent: '', newLine: ''}));
+    assert.deepEqual({test: {a: 0}}, xmlo.toObject());
 });
 
 test('escaping', function() {
