@@ -3,7 +3,7 @@
   "bugs": {
     "url": "https://github.com/sysaxis/js-xml-builder/issues"
   },
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "dynamic XML builder",
   "repository": {
       "type": "git",
