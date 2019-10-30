@@ -109,6 +109,16 @@ xml.head.toObject()
 { head: { meta: { _charset: 'utf-8' }, title: 'example' } }
 ```
 
+When you need to directy assign value to element you can use a value selector (_value by default):
+```js
+var xml = new XMLObject('a')
+xml._href = 'https://www.example.com'
+xml._value = 'Click me!'
+```
+```html
+<a href="https://www.example.com">Click me!</a>
+```
+
 PS. The examples include a lot of HTML, this library is not intended for composing HTML.
 
 ## Requirements
@@ -134,7 +144,7 @@ Different options can be passed to the constructor or toXML(options) method
 Name|Default|Usage|Description
 :--|:--|:--|:--
 attrSel|"_"|constructor|used to identify attributes (attrSel + attributeName, i.e. "_charset")
-valueSel|"_value"|constructor|used to set the node value directly
+valueSel|"_value"|constructor|used to set the element value directly
 defVal|""|constructor|default value to use when element value has not been provided
 indent|"\t"|toXML|indent definition, can be any string
 newLine|"\r\n"|toXML|newline definition, can be any string
