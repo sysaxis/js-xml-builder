@@ -105,6 +105,14 @@ test('self closing tags', function() {
     assert.deepEqual({test: {a: {}, b: {}}}, xmlo.toObject());
 });
 
+test('direct value assignment', function() {
+
+    xmlo = new XMLObject('test', {indent: '', newLine: ''});
+    xmlo._value = 'TEST';
+
+    assert.equal(xmlo.toXML(), '<test>TEST</test>');
+    assert.deepEqual(xmlo.toObject(), {test: {_value: 'TEST'}});
+})
 
 test('attribute assignment', function() {
 

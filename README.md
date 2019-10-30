@@ -134,6 +134,7 @@ Different options can be passed to the constructor or toXML(options) method
 Name|Default|Usage|Description
 :--|:--|:--|:--
 attrSel|"_"|constructor|used to identify attributes (attrSel + attributeName, i.e. "_charset")
+valueSel|"_value"|constructor|used to set the node value directly
 defVal|""|constructor|default value to use when element value has not been provided
 indent|"\t"|toXML|indent definition, can be any string
 newLine|"\r\n"|toXML|newline definition, can be any string
