@@ -150,6 +150,7 @@ indent|"\t"|toXML|indent definition, can be any string
 newLine|"\r\n"|toXML|newline definition, can be any string
 attrKey|null|toXML|when provided, will group the attributes of an element under attrKey object
 declaration|null|toXML|provide *true* for the default declaration, or any string to override it
+selfClose|true|toXML|provice *false* to disable self-closing tags
 
 ## Testing
 ```
