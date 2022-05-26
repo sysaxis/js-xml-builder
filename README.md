@@ -1,16 +1,39 @@
 dynamic-xml-builder
 ====
 
-Build XML dynamically.
+# Intro
 
-## Some rant
+Dynamically create XML from JS objects.
 
-Looking through the NPM trying to find an intuitive way to declare XML using JSON objects and all I see is a $#1tload of bad syntax design. Why is it so hard to first design the syntax and then the desired functionality around it? The developers are the users, one should know to program for their convenience.
+```js
+const XMLObject = require('dynamic-xml-builder');
 
-So here's another attempt at an XML builder...
+const data = new XMLObject('data');
 
-## How easy this is
-Write this
+data.user._type = 'person'
+data.user.email = 'john@johnjohnnyandjohnson.com'
+data.user.aliases.alias = ['John', 'Johnny', 'Johnson']
+data.toXML()
+```
+
+```xml
+<data>
+    <user type="person">
+        <email>john@johnjohnnyandjohnson.com</email>
+        <aliases>
+            <alias>John</alias>
+            <alias>Johnny</alias>
+            <alias>Johnson</alias>
+        </aliases>
+    </user>
+</data>
+```
+
+# Examples
+
+PS. The examples use HTML because it's a well-known XML.
+
+Object manipulation:
 ```js
 const XMLObject = require('dynamic-xml-builder');
 
@@ -36,14 +59,10 @@ xml.body = {
         br: null
     }
 }
-// or even do this
+// or assign a property in a non-existing path
 xml.body.div.div.p = 'great'
 ```
-and with
-```js
-xml.toXML();
-```
-get that:
+
 ```xml
 <html lang="en">
 	<head>
@@ -64,13 +83,14 @@ get that:
 	</body>
 </html>
 ```
-or with
+
+Configure output formatting:
 ```js
 xml.toXML({
     indent: 2, newLine: '\n'
 })
 ```
-this:
+
 ```xml
 <html lang="en">
   <head>
@@ -102,6 +122,7 @@ xml.head.toXML()
     <title>example</title>
 </head>
 ```
+Output a plain object:
 ```js
 xml.head.toObject()
 ```
@@ -119,16 +140,14 @@ xml._value = 'Click me!'
 <a href="https://www.example.com">Click me!</a>
 ```
 
-PS. The examples include a lot of HTML, this library is not intended for composing HTML.
-
-## Requirements
+# Requirements
 
 Since this is based on ES6 proxies, then ES6 support is required:
 
 * Node 6.4.0+
 * [Browsers (caniuse.com)](https://caniuse.com/#search=Proxy)
 
-## Constructor overloads
+# Constructor overloads
 ```js
 new XMLObject('html')
 new XMLObject('html', {head: {}, body: {}})
@@ -137,7 +156,7 @@ new XMLObject({html: {head: {}, body: {}}})
 new XMLObject({html: {head: {}, body: {}}}, ...options)
 ```
 
-## Options
+# Options
 
 Different options can be passed to the constructor or toXML(options) method
 
@@ -152,12 +171,7 @@ attrKey|null|toXML|when provided, will group the attributes of an element under 
 declaration|null|toXML|provide *true* for the default declaration, or any string to override it
 selfClose|true|toXML|provice *false* to disable self-closing tags
 
-## Testing
-```
-node test
-```
-
-## Licence
+# Licence
 
 MIT
 
