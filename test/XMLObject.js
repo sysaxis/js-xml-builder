@@ -157,6 +157,14 @@ test('array assignment', function() {
     assert.equal('<test><a>b</a><a>c</a><a><d>ef</d></a></test>', xmlo.toXML({indent: '', newLine: ''}));
 });
 
+test('empty array', function() {
+    xmlo = new XMLObject('test')
+
+    xmlo.a = []
+
+    assert.equal('<test></test>', xmlo.toXML({indent: '', newLine: ''}));
+})
+
 test.skip('array element assignment', function() {
     xmlo = new XMLObject('test');
 
