@@ -163,6 +163,7 @@ test('empty array', function() {
     xmlo.a = []
 
     assert.equal('<test></test>', xmlo.toXML({indent: '', newLine: ''}));
+    assert.equal('<test>\r\n</test>', xmlo.toXML());
 })
 
 test.skip('array element assignment', function() {
